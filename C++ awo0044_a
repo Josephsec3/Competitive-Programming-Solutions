@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    long long n, m; cin >> n >> m;
+    vector<long long> a(n); //Flowers' max
+    vector<long long> b(n); //Current water
+    for (long long i=0; i<n; i++){
+      long long c, s; cin >> c >> s;
+      a[i] = c;
+      b[i] = s;
+    }
+    for (long long i=0; i<n; i++){
+      long long x=min(a[i], b[i]), m;
+      b[i]+=x;
+      m-=x;
+      cout << b[i] << "\n";
+    }
+}
